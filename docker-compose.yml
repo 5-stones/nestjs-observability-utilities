@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  app:
+    image: node:22
+    #user: node
+    working_dir: /srv/app
+    command: npm run start:dev
+    volumes:
+      - ./:/srv/app/
+    ports:
+      - 3000:3000
+    #env_file:
+    #  - .env
+    environment:
+      NODE_ENV: development
+      LOG_LEVEL: "debug"
+
+      # send traces to jaeger
+      NODE_OPTIONS: "--require ./libs/nestjs-observability-utilities/src/otel/open-telemetry.js"
+      OTEL_EXPORTER_OTLP_PROTOCOL: grpc
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger:4317"
+      OTEL_SERVICE_NAME: "nest-obs-dev"
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"
