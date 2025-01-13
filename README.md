@@ -255,13 +255,27 @@ docker-compose up
 $ npm run start:dev
 ```
 
-### Resources
+## Release
 
-Check out a few resources that may come in handy when working with NestJS:
+The standard release command for this project is:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
+```sh
+npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+```
+
+This command will:
+
+1. Generate/update the Changelog
+1. Bump the package version
+1. Tag & pushing the commit
+
+e.g.
+
+```sh
+npm version 1.2.17
+npm version patch // 1.2.17 -> 1.2.18
+```
 
 ## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+[MIT licensed](./LICENSE).
