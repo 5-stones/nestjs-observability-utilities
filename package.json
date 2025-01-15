@@ -14,7 +14,8 @@
     "telemetry"
   ],
   "scripts": {
-    "build": "nest build",
+    "build": "nest build nestjs-observability-utilities",
+    "postbuild": "cp package.json dist/libs/nestjs-observability-utilities/",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -30,7 +31,7 @@
     "postversion": "npm run publish:git && npm run publish:npm",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "publish:git": "git push && git push --tags",
-    "publish:npm": "npm run build && npm publish --access public"
+    "publish:npm": "npm run build && npm publish ./dist/libs/nestjs-observability-utilities --access public"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
