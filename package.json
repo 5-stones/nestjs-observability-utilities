@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "nest build nestjs-observability-utilities",
-    "postbuild": "cp package.json dist/libs/nestjs-observability-utilities/",
+    "postbuild": "cp package.json CHANGELOG.md LICENSE README.md dist/libs/nestjs-observability-utilities/",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
