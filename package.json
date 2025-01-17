@@ -1,6 +1,6 @@
 {
   "name": "@5stones/nestjs-observability-utilities",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "",
   "author": "Ken Michalak <kmichalak@weare5stones.com>",
   "private": false,
